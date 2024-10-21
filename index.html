@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Love You Daisy</title>
+    <title>Will You Be My Girlfriend?</title>
     <style>
         body {
             margin: 0;
@@ -12,27 +12,46 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f0f0f0;
-            overflow: hidden;
+            background-color: #E6E6FA; /* Lavender background */
             font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            position: relative;
         }
 
-        h1 {
-            position: relative;
-            font-size: 50px;
-            color: #ff69b4;
-            font-weight: bold;
+        .container {
             text-align: center;
             z-index: 2;
         }
 
+        h1 {
+            font-size: 2.5rem;
+            color: #8B008B; /* Darker purple for the text */
+        }
+
+        /* The Yes/Yes Options */
+        .options {
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 1.5rem;
+            color: #8B008B;
+            margin-right: 10px;
+        }
+
+        .options input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Bouncing hearts */
         .heart {
             position: absolute;
             width: 20px;
             height: 20px;
-            background-color: #ff69b4;
+            background-color: #FF69B4; /* Pink hearts */
             transform: rotate(45deg);
-            animation: float 5s infinite ease-in-out;
+            animation: bounce 4s infinite ease-in-out;
         }
 
         .heart:before,
@@ -41,7 +60,7 @@
             position: absolute;
             width: 20px;
             height: 20px;
-            background-color: #ff69b4;
+            background-color: #FF69B4;
             border-radius: 50%;
         }
 
@@ -55,80 +74,69 @@
             top: 0;
         }
 
-        @keyframes float {
-            0% {
+        @keyframes bounce {
+            0%, 100% {
                 transform: translateY(0) rotate(45deg);
-                opacity: 1;
             }
-            100% {
-                transform: translateY(-100vh) rotate(45deg);
-                opacity: 0;
+            50% {
+                transform: translateY(-200px) rotate(45deg);
             }
         }
 
-        /* Random heart generator */
+        /* Randomly place the hearts */
         .heart:nth-child(1) {
-            left: 10%;
-            animation-duration: 4s;
-            animation-delay: 0s;
-        }
-
-        .heart:nth-child(2) {
+            top: 10%;
             left: 20%;
             animation-duration: 5s;
+            animation-delay: 0s;
+        }
+        .heart:nth-child(2) {
+            top: 20%;
+            left: 50%;
+            animation-duration: 7s;
             animation-delay: 1s;
         }
-
         .heart:nth-child(3) {
-            left: 30%;
-            animation-duration: 3s;
-            animation-delay: 2s;
-        }
-
-        .heart:nth-child(4) {
-            left: 40%;
-            animation-duration: 4.5s;
+            top: 50%;
+            left: 80%;
+            animation-duration: 6s;
             animation-delay: 0.5s;
         }
-
+        .heart:nth-child(4) {
+            top: 40%;
+            left: 10%;
+            animation-duration: 8s;
+            animation-delay: 0s;
+        }
         .heart:nth-child(5) {
-            left: 50%;
-            animation-duration: 6s;
-            animation-delay: 1.5s;
-        }
-
-        .heart:nth-child(6) {
-            left: 60%;
-            animation-duration: 3.5s;
-            animation-delay: 2.5s;
-        }
-
-        .heart:nth-child(7) {
-            left: 70%;
-            animation-duration: 4.2s;
-            animation-delay: 0.7s;
-        }
-
-        .heart:nth-child(8) {
-            left: 80%;
+            top: 60%;
+            left: 40%;
             animation-duration: 5.5s;
-            animation-delay: 1.2s;
+            animation-delay: 2s;
         }
-
-        .heart:nth-child(9) {
-            left: 90%;
-            animation-duration: 4.8s;
-            animation-delay: 1.8s;
+        .heart:nth-child(6) {
+            top: 70%;
+            left: 60%;
+            animation-duration: 9s;
+            animation-delay: 0.7s;
         }
     </style>
 </head>
 <body>
-    <h1>I LOVE YOU DAISY</h1>
 
-    <!-- Multiple hearts for animation -->
-    <div class="heart"></div>
-    <div class="heart"></div>
-    <div class="heart"></div>
+    <div class="container">
+        <h1>Will You Be My Girlfriend?</h1>
+
+        <div class="options">
+            <label for="yes1">Yes</label>
+            <input type="checkbox" id="yes1">
+
+            <label for="yes2">Yes</label>
+            <input type="checkbox" id="yes2">
+        </div>
+    </div>
+
+    <!-- Many bouncing hearts in the background -->
     <div class="heart"></div>
     <div class="heart"></div>
     <div class="heart"></div>
